@@ -8,17 +8,19 @@ class App extends Component {
     neutral: 0,
     bad: 0,
   };
-  countTotalFeedback = (feedback) => () => {
-    this.setState({ [feedback]: this.state[feedback] + 1 });
-  };
+
+  // countTotalFeedback = (feedback) => () => {
+  //   this.setState({ [feedback]: this.state[feedback] + 1 });
+  // };
 
   render() {
     // const { good, neutral, bad } = this.state;
     return (
-      <Section
-        title="Please leave feedback"
-        children={<Statistics title="Statistic" />}
-      />
+      <Section title="Please leave feedback">
+        {/* <Statistics good={good} neutral={neutral} bad={bad}></Statistics> */}
+        {/* <FeedbackOptions options={} onLeaveFeedback={}></FeedbackOptions> */}
+        <Statistics {...this.state}></Statistics>
+      </Section>
     );
   }
 }
