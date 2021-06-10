@@ -1,10 +1,20 @@
 import { Component } from "react";
+import styles from "./FeedbackOptions.module.scss";
 
-export default class FeedbackOptions extends Component {
+export class FeedbackOptions extends Component {
   render() {
     return (
-      <div>
-        <button></button>
+      <div className={styles.buttonsContainer}>
+        {this.props.options.map((option) => {
+          return (
+            <button
+              onClick={() => this.props.onLeaveFeedback(option)}
+              className={styles.feedBackButton}
+            >
+              {option}
+            </button>
+          );
+        })}
       </div>
     );
   }

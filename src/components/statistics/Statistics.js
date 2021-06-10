@@ -1,14 +1,19 @@
 import { Component } from "react";
+import { Notification } from "../notification/Notification";
+
 export class Statistics extends Component {
   render() {
-    const { good, neutral, bad } = this.props;
-
-    return (
+    const { good, neutral, bad, total, positivePercentage } = this.props;
+    return good || neutral || bad ? (
       <div>
-        <p>{good}</p>
-        <p>{neutral}</p>
-        <p>{bad}</p>
+        <p>Good: {good}</p>
+        <p>Neutral: {neutral}</p>
+        <p>Bad: {bad}</p>
+        <p>Total: {total()}</p>
+        <p>Positive feedback: {positivePercentage()}%</p>
       </div>
+    ) : (
+      <Notification message="No feedback given" />
     );
   }
 }

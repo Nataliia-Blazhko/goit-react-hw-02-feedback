@@ -1,10 +1,12 @@
 import { Component } from "react";
+
 export class Section extends Component {
   render() {
+    const { title, children } = this.props;
     return (
       <section>
-        <h2>{this.props.title}</h2>
-        {this.props.children}
+        <h2>{title}</h2>
+        {children}
       </section>
     );
   }

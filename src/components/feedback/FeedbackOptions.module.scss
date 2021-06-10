@@ -1,0 +1,12 @@
+.buttonsContainer {
+  display: flex;
+}
+
+.feedBackButton {
+  text-transform: capitalize;
+  padding: 5px 10px;
+
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+}
