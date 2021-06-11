@@ -2,6 +2,7 @@ import { Component } from "react";
 import { Section } from "./components/section/Section";
 import { Statistics } from "./components/statistics/Statistics";
 import { FeedbackOptions } from "./components/feedback/FeedbackOptions";
+import "./styles.scss";
 
 class App extends Component {
   state = {
