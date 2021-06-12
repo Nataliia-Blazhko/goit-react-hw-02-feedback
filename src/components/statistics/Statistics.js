@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { Notification } from "../notification/Notification";
+import PropTypes from "prop-types";
 
 export class Statistics extends Component {
   render() {
@@ -28,3 +29,10 @@ export class Statistics extends Component {
     );
   }
 }
+Statistics.propTypes = {
+  good: PropTypes.number,
+  neutral: PropTypes.number,
+  bad: PropTypes.number,
+  total: PropTypes.func,
+  positivePercentage: PropTypes.func,
+};

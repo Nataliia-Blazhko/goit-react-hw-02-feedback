@@ -1,10 +1,11 @@
-import { Component } from "react";
+import { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export class FeedbackOptions extends Component {
   render() {
     return (
       <div className="buttonsContainer">
-        {this.props.options.map((option) => {
+        {this.props.options.map(option => {
           return (
             <button
               key={option}
@@ -19,3 +20,8 @@ export class FeedbackOptions extends Component {
     );
   }
 }
+
+FeedbackOptions.propTypes = {
+  options: PropTypes.arrayOf(PropTypes.string),
+  onLeaveFeedback: PropTypes.func,
+};
